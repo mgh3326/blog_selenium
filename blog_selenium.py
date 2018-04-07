@@ -63,6 +63,8 @@ class Blog:
         print("Start")
         #JavascriptExecutor js = (JavascriptExecutor) driver
         driver.get('https://mgh3326.github.io')
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+
         # print(randrange(1,3))  # 주사위처럼 1에서 6까지의 정수 중 하나를 무작위
         # print(randrange(1,6))  # 주사위처럼 1에서 6까지의 정수 중 하나를 무작위
         num1, num2 = randrange(1, 6), randrange(1, 3)
@@ -92,7 +94,8 @@ class Blog:
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
-        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(5, 10))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
 
         driver.find_element_by_xpath(
             """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
@@ -101,7 +104,7 @@ class Blog:
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
 
-        driver.save_screenshot('out.png')
+        # driver.save_screenshot('out.png')
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         #td class tl_tit_l 이거 다 모아보자
 
