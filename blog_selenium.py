@@ -65,9 +65,10 @@ class Blog:
         driver.get('https://mgh3326.github.io')
         # print(randrange(1,3))  # 주사위처럼 1에서 6까지의 정수 중 하나를 무작위
         # print(randrange(1,6))  # 주사위처럼 1에서 6까지의 정수 중 하나를 무작위
-
+        num1, num2 = randrange(1, 6), randrange(1, 3)
+        print("num1 : %d, num2 %d" % (num1, num2))
         driver.find_element_by_xpath(
-            """//*[@id="main"]/div[2]/section/div[2]/div[%d]/article[%d]/div/a/span[1]""" % (randrange(1, 6), randrange(1, 3))).click()  # 로그인 버튼 누르기
+            """//*[@id="main"]/div[2]/section/div[2]/div[%d]/article[%d]/div/a/span[1]""" % (num1, num2)).click()  # 로그인 버튼 누르기
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         elem = driver.find_element_by_xpath("//*")
         source_code = elem.get_attribute("outerHTML")
@@ -87,14 +88,21 @@ class Blog:
 
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         driver.switch_to_frame(kakao)
+        # print(kakao)
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
 
         driver.find_element_by_xpath(
             """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
-        driver.save_screenshot('out.png')
+        driver.switch_to_window(driver.window_handles[1])
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
 
+        driver.save_screenshot('out.png')
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         #td class tl_tit_l 이거 다 모아보자
 
         #         a=[];
