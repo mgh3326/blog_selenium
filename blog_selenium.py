@@ -116,10 +116,7 @@ class Blog:
 if __name__ == "__main__":
 
     Blog = Blog()
-    # for i in range(4, 15):
-    # Blog = Blog("2014726058", "a1059221")  # 오류떠서 일단 이거 추가시켜봄
-    # print(str(i)+"번째 실행중입니다")
-    # Blog.ingang(6, i)  # 휴먼컴 2번째 인강
+
     Blog.advertising()
     # Blog.homework(6, 1)
     # print(Blog.output)
