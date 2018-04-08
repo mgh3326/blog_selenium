@@ -43,11 +43,11 @@ if platform.system() == "Windows":
 else:
     try:
         driver = webdriver.Chrome(os.path.join(
-            BASE_DIR, '../chromedriver/chromedriver'), chrome_options=chrome_options)
+            BASE_DIR, 'chromedriver'), chrome_options=chrome_options)
     except ConnectionResetError:
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         driver = webdriver.Chrome(os.path.join(
-            BASE_DIR, '../chromedriver/chromedriver'), chrome_options=chrome_options)
+            BASE_DIR, 'chromedriver'), chrome_options=chrome_options)
 driver.implicitly_wait(3)
 # url에 접근한다.
 
@@ -105,7 +105,7 @@ class Blog:
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
 
         # driver.save_screenshot('out.png')
-        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
         #td class tl_tit_l 이거 다 모아보자
 
         #         a=[];
