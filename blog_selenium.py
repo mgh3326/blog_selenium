@@ -99,6 +99,8 @@ class Blog:
 
         driver.find_element_by_xpath(
             """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+        #https://stackoverflow.com/questions/19200497/python-selenium-webscraping-nosuchelementexception-not-recognized
+        #위에 링크처럼 해줘야겠다. 예외처리해서 다른 페이지 가서 실행하게 하면 되겠다.
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         driver.switch_to_window(driver.window_handles[1])
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
