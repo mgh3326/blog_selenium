@@ -87,10 +87,15 @@ class Tisory:
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(5, 10))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
-        driver.find_element_by_xpath(
-            """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
-        # for index in soup_data.findAll("iframe"):
-        #     f.write(index.encode('utf-8'))
+        try:
+
+            driver.find_element_by_xpath(
+                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+        except driver.NoSuchElementException:
+            print("클릭 못했어 예외 처리 해야되")
+            return
+            # for index in soup_data.findAll("iframe"):
+            #     f.write(index.encode('utf-8'))
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         driver.switch_to_window(driver.window_handles[1])
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
@@ -104,7 +109,7 @@ class Tisory:
         # a = driver.find_elements_by_class_name("content");
 
         # f.close()
-        driver.save_screenshot('out.png')
+        # driver.save_screenshot('out.png')
         print("Finish")
 
 
