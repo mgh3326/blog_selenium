@@ -6,7 +6,6 @@ from random import *
 from bs4 import BeautifulSoup
 import requests
 import platform
-from selenium import NoSuchElementException
 # # Chrome의 경우 | 아까 받은 chromedriver의 위치를 지정해준다.
 # driver = webdriver.Chrome('../chromedriver/chromedriver')
 # # PhantomJS의 경우 | 아까 받은 PhantomJS의 위치를 지정해준다.
@@ -97,9 +96,27 @@ class Blog:
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(5, 10))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
+        try:
 
-        driver.find_element_by_xpath(
-            """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+            driver.find_element_by_xpath(
+                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+        except driver.NoSuchElementException:
+            temp = randrange(1, 3)
+            if temp == 1:
+                temp_num = randrange(1, 3)
+                if temp_num == 1:
+
+                    driver.find_element_by_xpath(
+                        """//*[@id="article-nav-newer"]/p""").click()  # 로그인 버튼 누르기
+                else:
+                    driver.find_element_by_xpath(
+                        """//*[@id="article-nav-older"]/p""").click()
+            else:
+                temp_num = randrange(1, 6)
+                driver.find_element_by_xpath(
+                    """//*[@id="recent-post"]/li[%d]/div[2]/p[2]/a""" % temp_num).click()  # 로그인 버튼 누르기
+            print("예외 처리 시작!")
+            self.rerere()
         #https://stackoverflow.com/questions/19200497/python-selenium-webscraping-nosuchelementexception-not-recognized
         #위에 링크처럼 해줘야겠다. 예외처리해서 다른 페이지 가서 실행하게 하면 되겠다.
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
@@ -114,6 +131,45 @@ class Blog:
         #         a=[];
         # a = driver.find_elements_by_class_name("content");
         print("Finish")
+
+    def rerere(self):
+        elem = driver.find_element_by_xpath("//*")
+        source_code = elem.get_attribute("outerHTML")
+        soup_data = BeautifulSoup(
+            source_code, 'html.parser')  # beautiful함수로 실행
+        # print(soup_data)
+        # print(source_code)
+        # f = open('frame.html', 'wb')
+        kakao = soup_data.findAll("iframe")[1].get('id')
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        driver.switch_to_frame(kakao)
+
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(5, 10))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
+        try:
+
+            driver.find_element_by_xpath(
+                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+        except driver.NoSuchElementException:
+            temp = randrange(1, 3)
+            if temp == 1:
+                temp_num = randrange(1, 3)
+                if temp_num == 1:
+
+                    driver.find_element_by_xpath(
+                        """//*[@id="article-nav-newer"]/p""").click()  # 로그인 버튼 누르기
+                else:
+                    driver.find_element_by_xpath(
+                        """//*[@id="article-nav-older"]/p""").click()
+            else:
+                temp_num = randrange(1, 6)
+                driver.find_element_by_xpath(
+                    """//*[@id="recent-post"]/li[%d]/div[2]/p[2]/a""" % temp_num).click()  # 로그인 버튼 누르기
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
 
 
 if __name__ == "__main__":
