@@ -6,6 +6,7 @@ from random import *
 from bs4 import BeautifulSoup
 import requests
 import platform
+from selenium.common.exceptions import NoSuchElementException  # 이거 추가해야되나
 # # Chrome의 경우 | 아까 받은 chromedriver의 위치를 지정해준다.
 # driver = webdriver.Chrome('../chromedriver/chromedriver')
 # # PhantomJS의 경우 | 아까 받은 PhantomJS의 위치를 지정해준다.
