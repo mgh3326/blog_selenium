@@ -92,8 +92,19 @@ class Tisory:
             driver.find_element_by_xpath(
                 """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
         except driver.NoSuchElementException:
-            print("클릭 못했어 예외 처리 해야되")
-            return
+            temp = randrange(1, 3)
+            if temp == 1:
+                temp_num = randrange(1, 4)
+                driver.find_element_by_xpath(
+                    """//*[@id="mArticle"]/div/div[6]/div[2]/ul/li[%d]/a/span[1]/span""" % temp_num).click()  # 로그인 버튼 누르기
+            else:
+                temp_num = randrange(1, 7)
+                driver.find_element_by_xpath(
+                    """//*[@id="mArticle"]/div/div[8]/ul/li[%d]/a""" % temp_num).click()  # 로그인 버튼 누르기
+            print("예외 처리 시작!")
+            self.rerere()
+
+            # return
             # for index in soup_data.findAll("iframe"):
             #     f.write(index.encode('utf-8'))
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
@@ -111,6 +122,44 @@ class Tisory:
         # f.close()
         # driver.save_screenshot('out.png')
         print("Finish")
+
+    def rerere(self):
+        elem = driver.find_element_by_xpath("//*")
+        source_code = elem.get_attribute("outerHTML")
+        soup_data = BeautifulSoup(
+            source_code, 'html.parser')  # beautiful함수로 실행
+        # print(soup_data)
+        # print(source_code)
+        # f = open('frame.html', 'wb')
+        kakao = soup_data.findAll("iframe")[2].get('id')
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        driver.switch_to_frame(kakao)
+
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(5, 10))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
+        try:
+
+            driver.find_element_by_xpath(
+                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+        except driver.NoSuchElementException:
+            temp = randrange(1, 3)
+            if temp == 1:
+                temp_num = randrange(1, 4)
+                driver.find_element_by_xpath(
+                    """//*[@id="mArticle"]/div/div[6]/div[2]/ul/li[%d]/a/span[1]/span""" % temp_num).click()  # 로그인 버튼 누르기
+            else:
+                temp_num = randrange(1, 7)
+                driver.find_element_by_xpath(
+                    """//*[@id="mArticle"]/div/div[8]/ul/li[%d]/a""" % temp_num).click()  # 로그인 버튼 누르기
+            # print("클릭 못했어 예외 처리 해야되")
+            # return
+            # for index in soup_data.findAll("iframe"):
+            #     f.write(index.encode('utf-8'))
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
 
 
 if __name__ == "__main__":
