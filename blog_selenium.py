@@ -101,7 +101,7 @@ class Blog:
 
             driver.find_element_by_xpath(
                 """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
-        except driver.NoSuchElementException:
+        except:
             temp = randrange(1, 3)
             if temp == 1:
                 temp_num = randrange(1, 3)
@@ -155,7 +155,7 @@ class Blog:
 
             driver.find_element_by_xpath(
                 """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
-        except driver.NoSuchElementException:
+        except:
             temp = randrange(1, 3)
             if temp == 1:
                 temp_num = randrange(1, 3)
@@ -212,7 +212,7 @@ class Tisory:
 
             driver.find_element_by_xpath(
                 """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
-        except driver.NoSuchElementException:
+        except:
             temp = randrange(1, 3)
             if temp == 1:
                 temp_num = randrange(1, 4)
@@ -266,7 +266,7 @@ class Tisory:
 
             driver.find_element_by_xpath(
                 """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
-        except driver.NoSuchElementException:
+        except:
             temp = randrange(1, 3)
             if temp == 1:
                 temp_num = randrange(1, 4)
