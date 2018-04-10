@@ -74,8 +74,51 @@ class Daum:
             """//*[@id="daumSearch"]/fieldset/div/div/button[2]""").click()
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         driver.save_screenshot('out.png')
-        print("Finish")
+        # elem = driver.find_element_by_xpath("//*")
+        # source_code = elem.get_attribute("outerHTML")
+        # soup_data = BeautifulSoup(
+        #     source_code, 'html.parser')  # beautiful함수로 실행
+        # f = open('al.html', 'wb')
+        # f.write(soup_data.encode('utf-8'))
+        # f.close()
+        driver.find_element_by_xpath(
+            """//*[@id="siteColl"]/div[2]/div/ul/li[1]/div/div/div[1]/a""").click()
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        driver.switch_to_window(driver.window_handles[1])
 
+        driver.save_screenshot('out.png')
+
+        print("Finish")
+    def search_mobile(self):
+        print("Start")
+        #JavascriptExecutor js = (JavascriptExecutor) driver
+        driver.get('https://m.daum.net')
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+
+        search_string = driver.find_element_by_xpath(
+            """//*[@id="query_totalsearch"]""")
+        search_string.send_keys(self.search)
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        driver.find_element_by_xpath(
+            """//*[@id="form_totalsearch"]/fieldset/div/button[2]/span""").click()
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        # driver.save_screenshot('out.png')
+        # elem = driver.find_element_by_xpath("//*")
+        # source_code = elem.get_attribute("outerHTML")
+        # soup_data = BeautifulSoup(
+        #     source_code, 'html.parser')  # beautiful함수로 실행
+        # f = open('al.html', 'wb')
+        # f.write(soup_data.encode('utf-8'))
+        # f.close()
+        driver.find_element_by_xpath(
+            """//*[@id="siteColl"]/div[2]/ul/li[1]/a/div/span[1]""").click()
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
+
+        driver.save_screenshot('out.png')
+
+        print("Finish")
     def rerere(self):
         elem = driver.find_element_by_xpath("//*")
         source_code = elem.get_attribute("outerHTML")
@@ -119,7 +162,8 @@ if __name__ == "__main__":
 
     Daum = Daum("kwanghyun")
 
-    Daum.search_desktop()
+    # Daum.search_desktop()
+    Daum.search_mobile()
     # Daum.homework(6, 1)
     # print(Daum.output)
     driver.quit()
