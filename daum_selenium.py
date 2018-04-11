@@ -90,6 +90,7 @@ class Daum:
         driver.save_screenshot('out.png')
 
         print("Finish")
+
     def search_mobile(self):
         print("Start")
         #JavascriptExecutor js = (JavascriptExecutor) driver
@@ -119,6 +120,7 @@ class Daum:
         driver.save_screenshot('out.png')
 
         print("Finish")
+
     def rerere(self):
         elem = driver.find_element_by_xpath("//*")
         source_code = elem.get_attribute("outerHTML")
