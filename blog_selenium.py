@@ -191,6 +191,7 @@ class Tisory:
         driver.get('https://mgh3326.tistory.com/m')
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         num = randrange(1, 11)
+        print("num : "+str(num))
         # print(randrange(1,3))  # 주사위처럼 1에서 6까지의 정수 중 하나를 무작위
         # print(randrange(1,6))  # 주사위처럼 1에서 6까지의 정수 중 하나를 무작위
         driver.find_element_by_xpath(
