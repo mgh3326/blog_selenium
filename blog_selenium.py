@@ -98,11 +98,15 @@ class Blog:
         sleep(float("{0:.2f}".format(uniform(1, 2))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(5, 10))))  # Time in seconds.
         sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
+        sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
+
         try:
 
             driver.find_element_by_xpath(
                 """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
         except:
+            print("예외 처리 시작!")
+            sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
             sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
 
             temp = randrange(1, 3)
@@ -131,6 +135,7 @@ class Blog:
         # driver.save_screenshot('out.png')
         sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
         #td class tl_tit_l 이거 다 모아보자
+        sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
 
         #         a=[];
         # a = driver.find_elements_by_class_name("content");
