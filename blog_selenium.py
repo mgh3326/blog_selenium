@@ -103,7 +103,7 @@ class Blog:
         try:
 
             driver.find_element_by_xpath(
-                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+                """//*[@id="landingLink"]/span/img""").click()  # 로그인 버튼 누르기
         except:
             print("예외 처리 시작!")
             sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
@@ -162,7 +162,7 @@ class Blog:
         try:
 
             driver.find_element_by_xpath(
-                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+                """//*[@id="landingLink"]/span/img""").click()  # 로그인 버튼 누르기
         except:
             sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
 
@@ -223,7 +223,7 @@ class Tisory:
         try:
 
             driver.find_element_by_xpath(
-                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+                """//*[@id="landingLink"]/span/img""").click()  # 로그인 버튼 누르기
         except:
 
             sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
@@ -283,7 +283,7 @@ class Tisory:
         try:
 
             driver.find_element_by_xpath(
-                """//*[@id="banner"]/span[2]""").click()  # 로그인 버튼 누르기
+                """//*[@id="landingLink"]/span/img""").click()  # 로그인 버튼 누르기
         except:
             sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
 

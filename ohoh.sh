@@ -1,1 +1,1 @@
-while [ true ]; do python blog_selenium.py; sleep 10; done
+while [ true ]; do python blog_selenium.py; sleep 200; done
