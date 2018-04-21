@@ -108,7 +108,10 @@ class Blog:
             print("예외 처리 시작!")
             sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
             sleep(float("{0:.2f}".format(uniform(10, 20))))  # Time in seconds.
+            # Time in seconds.
+            sleep(float("{0:.2f}".format(uniform(100, 200))))
 
+            return  # 일단 그냥 꺼지게 하자
             temp = randrange(1, 3)
             if temp == 1:
                 temp_num = randrange(1, 3)
